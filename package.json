@@ -1,14 +1,40 @@
 {
-  "name": "memory-game",
-  "version": "1.0.0",
-  "description": "Web app for Memory game",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Taylor Brown",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "yo": "^2.0.6"
-  }
+    "name": "memory-game-js",
+    "description": "",
+    "version": "1.0.0",
+    "author": "tfbirk <none>",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/tfbirk/memory-game-js.git"
+    },
+    "bugs": "http://github.com/tfbirk/memory-game-js/issues",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "dependencies": {
+        "express": "^4.0.0",
+        "body-parser": "^1.15.0",
+        "swaggerize-express": "^4.0.0",
+        "swagmock": "~0.0.2"
+    },
+    "devDependencies": {
+        "eslint": "^2",
+        "tape": "^4",
+        "istanbul": "~0.4.3",
+        "is-my-json-valid": "^2.13.1",
+        "js-yaml": "^3.2.6",
+        "supertest": "^1.2.0",
+        "swagger-parser": "^3.4.1"
+    },
+    "scripts": {
+        "test": "tape 'tests/**/*.js'",
+        "cover": "istanbul cover tape -- 'tests/**/*.js'",
+        "lint": "eslint .",
+        "regenerate": "yo swaggerize:test --framework express --apiPath './config/swagger.json'"
+    },
+    "generator-swaggerize": {
+        "version": "4.1.0"
+    },
+    "main": "./server"
 }
